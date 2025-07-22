@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for ShayariVerse - Learn how we collect, use, and protect your personal information.">
+    <meta name="keywords" content="Privacy Policy, ShayariVerse, Data Protection, User Privacy">
+    <meta name="author" content="ShayariVerse Team">
+    <meta name="robots" content="noindex, follow"> <!-- Noindex for privacy policy to avoid cluttering search results, but follow for links -->
+    <link rel="canonical" href="https://www.yourwebsite.com/privacy-policy.html"> <!-- IMPORTANT: Replace with your actual domain -->
+
+    <title>Privacy Policy – ShayariVerse</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts: Roboto for general text, Roboto Slab for headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link href="/CSS/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+    <!-- Header Section (replicated from index.html for consistency) -->
+    <header class="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-700 dark:from-pink-700 dark:via-purple-900 dark:to-indigo-900 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <!-- Website Name and Logo (Clickable) -->
+            <a href="/public/index.html" class="flex items-center space-x-3 group">
+                <img alt="ShayariVerse logo, stylized S letter in purple gradient background" class="w-10 h-10 rounded-md transition-transform duration-300 group-hover:scale-110" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/22af607b-5280-4828-d561-b8f9efa3c68e.jpg" width="40"/>
+                <h1 class="text-white font-bold text-xl sm:text-2xl font-['Roboto_Slab'] select-none group-hover:text-indigo-200 transition-colors duration-300">
+                    ShayariGenerator
+                </h1>
+            </a>
+            
+            <!-- Desktop Navigation and Dark Mode Toggle -->
+            <nav class="hidden sm:flex items-center space-x-4">
+                <a href="/public/#template-section" class="text-white hover:text-indigo-200 font-medium transition-colors duration-300">Templates</a>
+                <a href="https://shayarihotoaisi.com/shayari/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-indigo-200 font-medium transition-colors duration-300">Shayari</a>
+                <button aria-label="Toggle Dark Mode" class="text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 rounded-md p-2 hover:bg-indigo-500 transition" id="darkModeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <div class="sm:hidden flex items-center">
+                <button aria-label="Open Mobile Menu" class="text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 rounded-md p-2 hover:bg-indigo-500 transition" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (Off-canvas) -->
+    <div id="mobileMenu" class="fixed inset-y-0 left-0 w-64 bg-gray-900 dark:bg-gray-900 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out sm:hidden">
+        <div class="flex justify-end p-4">
+            <button aria-label="Close Mobile Menu" class="text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 rounded-md p-2 hover:bg-indigo-500 transition" id="mobileMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4">
+            <a href="/public/#template-section" class="text-white hover:text-indigo-200 font-medium text-lg transition-colors duration-300" id="mobileTemplatesLink">Templates</a>
+            <a href="https://shayarihotoaisi.com/shayari/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-indigo-200 font-medium text-lg transition-colors duration-300">Shayari</a>
+            <button aria-label="Toggle Dark Mode" class="text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 rounded-md p-2 hover:bg-indigo-500 transition flex items-center justify-start gap-2" id="mobileDarkModeToggle" title="Toggle Dark Mode">
+                <i class="fas fa-moon"></i> Dark Mode
+            </button>
+        </nav>
+    </div>
+
+    <!-- Main Content Section - Privacy Policy -->
+    <main class="flex-grow max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-10 mb-10">
+            <h1 class="text-3xl font-semibold mb-6 text-center font-['Roboto_Slab']">
+                Privacy Policy
+            </h1>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">
+                Your privacy is important to us. This Privacy Policy explains how ShayariGenerator collects, uses, and protects your information.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-8 mb-4 font-['Roboto_Slab']">
+                Information We Collect
+            </h2>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">
+                We collect minimal information from our users. When you use ShayariGenerator, we may collect:
+            </p>
+            <ul class="list-disc list-inside ml-4 mb-4 text-gray-700 dark:text-gray-300">
+                <li><strong>Usage Data:</strong> We may collect anonymous data on how you interact with our website, such as which poets or languages are most popular, or how often the generate button is clicked. This helps us improve our service. This data is aggregated and does not identify individual users.</li>
+                <li><strong>Device Information:</strong> We may collect general, non-identifying information about the device you use to access our website (e.g., browser type, operating system) to ensure compatibility and optimize performance.</li>
+            </ul>
+
+            <h2 class="text-2xl font-semibold mt-8 mb-4 font-['Roboto_Slab']">
+                How We Use Your Information
+            </h2>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">
+                The information we collect is used solely for the following purposes:
+            </p>
+            <ul class="list-disc list-inside ml-4 mb-4 text-gray-700 dark:text-gray-300">
+                <li>To operate and maintain our website.</li>
+                <li>To improve and personalize your experience on ShayariGenerator.</li>
+                <li>To understand and analyze how you use our website.</li>
+                <li>To develop new products, services, features, and functionality.</li>
+            </ul>
+
+            <h2 class="text-2xl font-semibold mt-8 mb-4 font-['Roboto_Slab']">
+                Data Sharing and Disclosure
+            </h2>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">
+                We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. We may share aggregated, non-personally identifiable information with trusted third parties for analytics or marketing purposes, but this data cannot be used to identify you.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-8 mb-4 font-['Roboto_Slab']">
+                Data Security
+            </h2>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">
+                We implement a variety of security measures to maintain the safety of your personal information when you enter, submit, or access your personal information.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-8 mb-4 font-['Roboto_Slab']">
+                Third-Party Links
+            </h2>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">
+                Occasionally, at our discretion, we may include or offer third-party products or services on our website. These third-party sites have separate and independent privacy policies. We therefore have no responsibility or liability for the content and activities of these linked sites. Nonetheless, we seek to protect the integrity of our site and welcome any feedback about these sites.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-8 mb-4 font-['Roboto_Slab']">
+                Children's Privacy
+            </h2>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">
+                Our website is not intended for children under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do necessary actions.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-8 mb-4 font-['Roboto_Slab']">
+                Changes to This Privacy Policy
+            </h2>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">
+                We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-8 mb-4 font-['Roboto_Slab']">
+                Contact Us
+            </h2>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">
+                If you have any questions about this Privacy Policy, please contact us at <a href="mailto:support@shayariverse.com" class="text-indigo-600 hover:underline dark:text-indigo-400">support@ShayariGenerator.shayarihotoaisi.com</a>.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer Section (replicated from index.html for consistency) -->
+    <footer class="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm sm:text-base">
+            © 2025 ShayariGenerator. All rights reserved. | 
+            <a href="/privacy-policy.html" class="text-indigo-600 hover:underline dark:text-indigo-400">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript file for dark mode toggle on this page -->
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>

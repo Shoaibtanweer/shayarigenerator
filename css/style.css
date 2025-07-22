@@ -1,0 +1,79 @@
+/*
+ * Custom Styles for ShayariVerse
+ * This file contains all custom CSS rules not handled by Tailwind CSS.
+ */
+
+/* Base body styles, ensuring smooth scrolling and font consistency */
+body {
+  font-family: 'Roboto', sans-serif; /* Default font for the body */
+}
+
+/* Specific font for Shayari text, enhancing its aesthetic appeal */
+.font-shayari {
+  font-family: 'Scheherazade New', serif; /* Font for displaying Shayari */
+}
+
+/*
+ * Styling for the Shayari Card container
+ * Display size is now controlled by Tailwind classes in index.html.
+ * Properties for download size are handled dynamically in main.js.
+ */
+#shayari-card {
+  width: 100%; /* Full width within its parent container */
+  margin-left: auto; /* Centers the card horizontally */
+  margin-right: auto; /* Centers the card horizontally */
+  /* Ensures text within the card is centered vertically and horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem; /* Add some padding inside the card */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+  /* Removed max-width and aspect-ratio from here for responsive display */
+}
+
+/*
+ * Custom Scrollbar Styling for the Template Selector
+ * This provides a more visually appealing scrollbar for the template options.
+ */
+#templateSelector {
+  scrollbar-width: thin; /* Firefox: makes scrollbar thinner */
+  scrollbar-color: #a78bfa transparent; /* Firefox: thumb color and track color */
+  padding-bottom: 1rem; /* Add padding at the bottom for scrollbar visibility */
+}
+
+/* Webkit (Chrome, Safari) scrollbar styles */
+#templateSelector::-webkit-scrollbar {
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+/* Webkit scrollbar track */
+#templateSelector::-webkit-scrollbar-track {
+  background: transparent; /* Transparent background for the track */
+}
+
+/* Webkit scrollbar thumb (the draggable part) */
+#templateSelector::-webkit-scrollbar-thumb {
+  background-color: #a78bfa; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 2px solid transparent; /* Transparent border around the thumb */
+}
+
+/* Template preview items - now primarily controlled by Tailwind's aspect-square in HTML */
+#templateSelector > div {
+  display: flex; /* Use flexbox for content alignment within each template item */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Custom utility class for text shadow effect */
+.text-shadow-lg {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Large text shadow */
+}
+
+/* Mobile menu specific styles */
+#mobileMenu.open {
+    transform: translateX(0); /* Slide in when open */
+}

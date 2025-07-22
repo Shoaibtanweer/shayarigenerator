@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ShayariVerse - Your ultimate AI and Classic Shayari Generator. Generate, copy, share, and download beautiful Urdu, Hindi, English, and Arabic shayaris.">
+    <meta name="keywords" content="Shayari, AI Shayari, Classic Shayari, Urdu Shayari, Hindi Shayari, English Shayari, Arabic Shayari, Shayari Generator, Poetry, Ghalib, Iqbal, Jaun Elia, Mir Taqi Mir, Gulzar, Rahat Indori, Javed Akhtar, Bashir Badr, Faiz Ahmed Faiz">
+    <meta name="author" content="ShayariVerse Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.yourwebsite.com/"> <!-- IMPORTANT: Replace with your actual domain -->
+
+    <title>ShayariVerse – AI + Classic Shayari Generator</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts: Roboto for general text, Scheherazade New for Shayari, Roboto Slab for headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
+    
+    <!-- Custom Stylesheet -->
+    <link href="/CSS/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-700 dark:from-pink-700 dark:via-purple-900 dark:to-indigo-900 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <!-- Website Name and Logo (Clickable) -->
+            <a href="/public/index.html" class="flex items-center space-x-3 group">
+                <!-- Placeholder for logo. Replace src with your actual logo path in logo/ folder -->
+                <img alt="ShayariVerse logo, stylized S letter in purple gradient background" class="w-10 h-10 rounded-md transition-transform duration-300 group-hover:scale-110" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/22af607b-5280-4828-d561-b8f9efa3c68e.jpg" width="40"/>
+                <h1 class="text-white font-bold text-xl sm:text-2xl font-['Roboto_Slab'] select-none group-hover:text-indigo-200 transition-colors duration-300">
+                    ShayariGenerator
+                </h1>
+            </a>
+            
+            <!-- Desktop Navigation and Dark Mode Toggle -->
+            <nav class="hidden sm:flex items-center space-x-4">
+                <a href="#template-section" class="text-white hover:text-indigo-200 font-medium transition-colors duration-300">Templates</a>
+                <a href="https://shayarihotoaisi.com/shayari/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-indigo-200 font-medium transition-colors duration-300">Shayari</a>
+                <button aria-label="Toggle Dark Mode" class="text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 rounded-md p-2 hover:bg-indigo-500 transition" id="darkModeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <div class="sm:hidden flex items-center">
+                <button aria-label="Open Mobile Menu" class="text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 rounded-md p-2 hover:bg-indigo-500 transition" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu (Off-canvas) -->
+    <div id="mobileMenu" class="fixed inset-y-0 left-0 w-64 bg-gray-900 dark:bg-gray-900 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out sm:hidden">
+        <div class="flex justify-end p-4">
+            <button aria-label="Close Mobile Menu" class="text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 rounded-md p-2 hover:bg-indigo-500 transition" id="mobileMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col p-4 space-y-4">
+            <a href="#template-section" class="text-white hover:text-indigo-200 font-medium text-lg transition-colors duration-300" id="mobileTemplatesLink">Templates</a>
+            <a href="https://shayarihotoaisi.com/shayari/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-indigo-200 font-medium text-lg transition-colors duration-300">Shayari</a>
+            <button aria-label="Toggle Dark Mode" class="text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-300 rounded-md p-2 hover:bg-indigo-500 transition flex items-center justify-start gap-2" id="mobileDarkModeToggle" title="Toggle Dark Mode">
+                <i class="fas fa-moon"></i> Dark Mode
+            </button>
+        </nav>
+    </div>
+
+    <!-- Main Content Section -->
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Generate Shayari Section -->
+        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-10 mb-10">
+            <h2 class="text-3xl font-semibold mb-6 text-center font-['Roboto_Slab']">
+                Generate Your Shayari
+            </h2>
+            <form class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8" id="shayariForm">
+                <div>
+                    <label class="block mb-2 font-medium" for="poet">
+                        Select Poet
+                    </label>
+                    <select class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 block appearance-none" id="poet" name="poet" required>
+                        <option value="ghalib">Mirza Ghalib</option>
+                        <option value="iqbal">Allama Iqbal</option>
+                        <option value="jaun">Jaun Elia</option>
+                        <option value="mir">Mir Taqi Mir</option>
+                        <option value="gulzar">Gulzar</option>
+                        <option value="rahat">Rahat Indori</option>
+                        <option value="javed">Javed Akhtar</option>
+                        <option value="bashir">Bashir Badr</option>
+                        <option value="faiz">Faiz Ahmed Faiz</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block mb-2 font-medium" for="lang">
+                        Select Language
+                    </label>
+                    <select class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 py-2 px-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 block appearance-none" id="lang" name="lang" required>
+                        <option value="urdu">Urdu</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="english">English</option>
+                        <option value="arabic">Arabic</option>
+                    </select>
+                </div>
+                <div class="flex items-end">
+                    <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition focus:outline-none focus:ring-2 focus:ring-indigo-400 transform hover:scale-105 active:scale-95" id="generateBtn" type="button">
+                        Generate Shayari
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Shayari Output Card - Adjusted sizing for better responsiveness -->
+            <section aria-label="Shayari card with selected template" class="relative rounded-xl shadow-lg text-center font-shayari text-xl sm:text-2xl leading-relaxed flex flex-col justify-center select-text p-8 w-full h-64 sm:h-80 md:h-96 mx-auto" id="shayari-card" role="region" tabindex="0" aria-live="polite" aria-atomic="true">
+                <p class="whitespace-pre-wrap break-words text-gray-900 dark:text-gray-100" id="output">
+                    Yahan shayari dikhegi...
+                </p>
+            </section>
+
+            <!-- Action Buttons (Copy, Download, Share) -->
+            <div class="mt-6 flex flex-wrap justify-center gap-4" role="group" aria-label="Shayari actions">
+                <button class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition focus:outline-none focus:ring-2 focus:ring-green-400 transform hover:scale-105 active:scale-95" id="copyBtn" title="Copy Shayari to Clipboard" type="button">
+                    <i class="fas fa-copy" aria-hidden="true"></i> Copy
+                </button>
+                <button class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition focus:outline-none focus:ring-2 focus:ring-blue-400 transform hover:scale-105 active:scale-95" id="downloadBtn" title="Download Shayari as Image" type="button">
+                    <i class="fas fa-download" aria-hidden="true"></i> Download
+                </button>
+                <button class="flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition focus:outline-none focus:ring-2 focus:ring-pink-400 transform hover:scale-105 active:scale-95" id="shareBtn" title="Share Shayari" type="button">
+                    <i class="fas fa-share-alt" aria-hidden="true"></i> Share
+                </button>
+            </div>
+        </section>
+
+        <!-- Template Selection Section -->
+        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-10 mb-10" id="template-section">
+            <h3 class="text-2xl font-semibold mb-4 font-['Roboto_Slab'] text-center">
+                Choose a Template (1080x1080 Instagram Post Size)
+            </h3>
+            <!-- Grid layout for templates: 1 col on small, 2 on medium, 3 on large -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 pb-4" id="templateSelector" role="list" aria-label="Template selection">
+                <!-- Template 1 -->
+                <div aria-label="Select template 1" class="cursor-pointer rounded-xl p-6 bg-gradient-to-br from-pink-200 to-purple-300 dark:from-pink-700 dark:to-purple-900 shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-yellow-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95" data-template="1" role="listitem button" tabindex="0">
+                    <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+                        دل ہی تو ہے نہ سنگ و خشت، درد سے بھر نہ آئے کیوں
+                        <br>
+                        روئیں گے ہم بھی اگر تیری آنکھوں میں آنسو آئے
+                    </p>
+                </div>
+                <!-- Template 2 -->
+                <div aria-label="Select template 2" class="cursor-pointer rounded-xl p-6 bg-gradient-to-tr from-yellow-200 to-red-300 dark:from-yellow-700 dark:to-red-900 shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-green-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95" data-template="2" role="listitem button" tabindex="0">
+                    <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+                        ہزاروں خواہشیں ایسی کہ ہر خواہش پہ دم نکلے
+                        <br>
+                        بہت نکلے میرے ارمان لیکن پھر بھی کم نکلے
+                    </p>
+                </div>
+                <!-- Template 3 -->
+                <div aria-label="Select template 3" class="cursor-pointer rounded-xl p-6 bg-gradient-to-tr from-green-200 to-blue-300 dark:from-green-700 dark:to-blue-900 shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-purple-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95" data-template="3" role="listitem button" tabindex="0">
+                    <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+                        زندگی سے یہ گلہ ہے مجھے
+                        <br>
+                        کہ کم ہی ملے ہیں دوست سچے
+                    </p>
+                </div>
+                <!-- Template 4 -->
+                <div aria-label="Select template 4" class="cursor-pointer rounded-xl p-6 bg-gradient-to-tr from-indigo-200 to-pink-300 dark:from-indigo-700 dark:to-pink-900 shadow-md text-center font-shayari text-lg sm:text-xl italic leading-relaxed flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95" data-template="4" role="listitem button" tabindex="0">
+                    <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+                        "ہزاروں سال نرگس اپنی بے نوری پہ روتی ہے<br>
+                        بڑی مشکل سے ہوتا ہے چمن میں دیدہ ور پیدا"
+                    </p>
+                </div>
+                <!-- Template 5 -->
+                <div aria-label="Select template 5" class="cursor-pointer rounded-xl p-6 bg-gradient-to-tr from-cyan-200 to-blue-400 dark:from-cyan-700 dark:to-blue-900 shadow-md text-center font-shayari text-lg sm:text-xl font-bold leading-relaxed flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95" data-template="5" role="listitem button" tabindex="0">
+                    <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+                        "دل سے جو بات نکلتی ہے اثر رکھتی ہے<br>
+                        پر نہیں طاقتِ پرواز مگر رکھتی ہے"
+            
+                    </p>
+                </div>
+                <!-- New Template 6: Subtle Border -->
+                <div aria-label="Select template 6" class="cursor-pointer rounded-xl p-6 bg-white dark:bg-gray-700 shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-gray-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95 border-2 border-dashed border-indigo-400 dark:border-indigo-600" data-template="6" role="listitem button" tabindex="0">
+                    <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+                        "हर दर्द की दवा है, हर ज़ख़्म का मरहम<br>
+                        एक तेरा नाम है, और एक तेरा दीदार"
+                    </p>
+                </div>
+                <!-- New Template 7: Text Shadow Effect -->
+                <div aria-label="Select template 7" class="cursor-pointer rounded-xl p-6 bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-700 dark:to-gray-900 shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-purple-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95" data-template="7" role="listitem button" tabindex="0">
+                    <p class="whitespace-pre-wrap leading-relaxed max-w-xs text-shadow-lg text-gray-800 dark:text-gray-200">
+                         "इश्क़ ने 'ग़ालिब' निकम्मा कर दिया<br>
+                        वर्ना हम भी आदमी थे काम के"
+                    </p>
+                </div>
+
+
+<!-- NEW TEMPLATE 8: Deep Blue with Subtle Pattern -->
+<div aria-label="Select template 8" class="cursor-pointer rounded-xl p-6 bg-blue-800 dark:bg-blue-950 text-white shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-indigo-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95 bg-[url('https://www.transparenttextures.com/patterns/diagmonds.png')] bg-repeat" data-template="8" role="listitem button" tabindex="0">
+    <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+    "तेरी हर बात में इक बात है<br>
+        जो दिल को छू जाती है"
+    </p>
+</div>
+<!-- NEW TEMPLATE 9: Soft Pastel with Border -->
+<div aria-label="Select template 9" class="cursor-pointer rounded-xl p-6 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-800 dark:to-pink-800 text-gray-800 dark:text-gray-100 shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-pink-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95 border-4 border-dashed border-purple-400 dark:border-pink-600" data-template="9" role="listitem button" tabindex="0">
+    <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+           "मोहब्बत का रंग है गहरा<br>
+        जो हर दिल में बस जाता है"
+    </p>
+</div>
+<!-- NEW TEMPLATE 10: Modern Minimalist with Shadow -->
+<div aria-label="Select template 10" class="cursor-pointer rounded-xl p-6 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-gray-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95 hover:shadow-2xl" data-template="10" role="listitem button" tabindex="0">
+    <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+         "सफ़र में धूप तो होगी, जो चल सको तो चलो<br>
+        सभी हैं भीड़ में, तुम भी निकल सको तो चलो"
+    </p>
+</div>
+
+            </div>
+        </section>
+
+        <!-- How to Use Section -->
+        <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-10 mb-10">
+            <h2 class="text-3xl font-semibold mb-6 text-center font-['Roboto_Slab']">
+                How to Use ShayariVerse
+            </h2>
+            <div class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                <!-- Step 1 Card -->
+                <div class="flex flex-col items-center space-y-3 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-gray-50 dark:bg-gray-700">
+                    <div class="text-indigo-600 dark:text-indigo-400 text-5xl font-bold">1</div>
+                    <div class="text-lg font-medium">Select Poet & Language</div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Choose your favorite poet and preferred language from the dropdown menus.
+                    </p>
+                </div>
+                <!-- Step 2 Card -->
+                <div class="flex flex-col items-center space-y-3 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-gray-50 dark:bg-gray-700">
+                    <div class="text-indigo-600 dark:text-indigo-400 text-5xl font-bold">2</div>
+                    <div class="text-lg font-medium">Generate & Customize</div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Click generate to get a random shayari. Pick a beautiful template to style your shayari.
+                    </p>
+                </div>
+                <!-- Step 3 Card -->
+                <div class="flex flex-col items-center space-y-3 p-4 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-gray-50 dark:bg-gray-700">
+                    <div class="text-indigo-600 dark:text-indigo-400 text-5xl font-bold">3</div>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Easily copy to clipboard, share on social media, or download your shayari as an Instagram-ready image.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm sm:text-base">
+            © 2025 ShayariGenerator. All rights reserved. | 
+            <a href="/public/privacy-policy.html" class="text-indigo-600 hover:underline dark:text-indigo-400">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <!-- html2canvas library for downloading shayari as image -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <!-- Main JavaScript file -->
+    <script type="module" src="/js/main.js"></script>
+</body>
+</html>
