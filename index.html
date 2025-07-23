@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ShayariVerse - Your ultimate AI and Classic Shayari Generator. Generate, copy, share, and download beautiful Urdu, Hindi, English, and Arabic shayaris.">
-    <meta name="keywords" content="Shayari, AI Shayari, Classic Shayari, Urdu Shayari, Hindi Shayari, English Shayari, Arabic Shayari, Shayari Generator, Poetry, Ghalib, Iqbal, Jaun Elia, Mir Taqi Mir, Gulzar, Rahat Indori, Javed Akhtar, Bashir Badr, Faiz Ahmed Faiz">
-    <meta name="author" content="ShayariVerse Team">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.yourwebsite.com/"> <!-- IMPORTANT: Replace with your actual domain -->
+  <!-- Meta Basics -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>ShayariVerse – AI + Classic Shayari Generator</title>
+  <!-- SEO Meta -->
+  <meta name="description" content="ShayariGenerator - Generate beautiful AI and classic Shayari instantly. Choose from Urdu, Hindi, English, Arabic and poets like Ghalib, Iqbal, Jaun Elia. Share, copy, or download your favorite poetry." />
+  <meta name="keywords" content="Shayari Generator, Urdu Shayari, Hindi Shayari, English Shayari, Arabic Shayari, Jaun Elia Shayari, Ghalib Shayari, Iqbal Shayari, AI Shayari, Sad Shayari, Love Shayari, Motivational Shayari, Romantic Shayari" />
+  <meta name="author" content="Shoaib Tanweer" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://shayarigenerator.shayarihotoaisi.com/" />
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts: Roboto for general text, Scheherazade New for Shayari, Roboto Slab for headings -->
-    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet">
-    
-    <!-- Custom Stylesheet -->
-    <link href="/CSS/style.css" rel="stylesheet">
+  <title>Shayari Generator - Online Free Shayari Generator in Urdu, Hindi, English, Arabic</title>
+
+  <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shayari Generator - AI & Classic Shayari in Hindi, Urdu, English" />
+  <meta property="og:description" content="Instantly generate and share beautiful Shayaris. Powered by AI, inspired by legends like Ghalib, Iqbal, and Jaun Elia." />
+  <meta property="og:url" content="https://shayarigenerator.shayarihotoaisi.com/" />
+  <meta property="og:image" content="/logo/favicon.png" /> <!-- ⚠️ Replace with Our actual banner iamge -->
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shayari Generator - AI + Classic Shayari in 1 Click" />
+  <meta name="twitter:description" content="Love Shayari, Sad Shayari, Romantic, Urdu, Hindi & more. Just one click!" />
+  <meta name="twitter:image" content="https://shayarigenerator.shayarihotoaisi.com/logo/favicon.png" /> 
+  <!-- Icons & Theme -->
+  <link rel="icon" href="/logo/favicon.png" /> <!-- Your favicon -->
+  <meta name="theme-color" content="#8B5CF6" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New&family=Roboto&family=Roboto+Slab&display=swap" rel="stylesheet" />
+
+  <!-- Your Custom CSS -->
+  <link href="/css/style.css" rel="stylesheet" />
 </head>
+
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
     <!-- Header Section -->
     <header class="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-700 dark:from-pink-700 dark:via-purple-900 dark:to-indigo-900 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
             <!-- Website Name and Logo (Clickable) -->
-            <a href="/public/index.html" class="flex items-center space-x-3 group">
+            <a href="/" class="flex items-center space-x-3 group">
                 <!-- Placeholder for logo. Replace src with your actual logo path in logo/ folder -->
-                <img alt="ShayariVerse logo, stylized S letter in purple gradient background" class="w-10 h-10 rounded-md transition-transform duration-300 group-hover:scale-110" height="40" loading="lazy" src="https://storage.googleapis.com/a1aa/image/22af607b-5280-4828-d561-b8f9efa3c68e.jpg" width="40"/>
+                <img alt="ShayariGenerator logo, stylized S letter in purple gradient background" class="w-10 h-10 rounded-md transition-transform duration-300 group-hover:scale-110" height="40" loading="lazy" src="/logo/shayarigenerator-logo.png" width="40"/>
                 <h1 class="text-white font-bold text-xl sm:text-2xl font-['Roboto_Slab'] select-none group-hover:text-indigo-200 transition-colors duration-300">
                     ShayariGenerator
                 </h1>
@@ -216,13 +239,87 @@
     </p>
 </div>
 
+<!-- NEW TEMPLATE 11: Romantic Heart Style -->
+<div aria-label="Select template 11" class="cursor-pointer rounded-[40px] p-6 bg-pink-100 dark:bg-pink-900 text-red-700 dark:text-red-100 shadow-xl text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-red-300 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95 hover:shadow-2xl" data-template="11" role="listitem button" tabindex="0">
+  <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+    "तेरे बिना ये दुनिया अधूरी सी लगती है,<br>तेरे साथ हर शाम सुनहरी सी लगती है"
+  </p>
+</div>
+
+<!-- NEW TEMPLATE 12: Sad & Moody Vibe -->
+<div aria-label="Select template 12" class="cursor-pointer rounded-lg p-6 bg-gradient-to-br from-gray-700 via-gray-900 to-black text-white shadow-inner text-center font-shayari text-lg sm:text-xl italic select-none hover:ring-4 hover:ring-gray-500 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95" data-template="12" role="listitem button" tabindex="0">
+  <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+    "ग़म की परछाइयों से डर नहीं लगता,<br>बस अब किसी अपने के खोने का डर लगता है"
+  </p>
+</div>
+
+<!-- NEW TEMPLATE 13: Motivational Fire Theme -->
+<div aria-label="Select template 13" class="cursor-pointer rounded-xl p-6 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-600 text-white shadow-2xl text-center font-shayari font-bold text-lg sm:text-xl select-none hover:ring-4 hover:ring-orange-300 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95" data-template="13" role="listitem button" tabindex="0">
+  <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+    "मुश्किलों से भाग जाना आसान होता है,<br>हर पहलू ज़िन्दगी का इम्तिहान होता है"
+  </p>
+</div>
+
+<!-- NEW TEMPLATE 14: Cool Blue Inspiration -->
+<div aria-label="Select template 14" class="cursor-pointer rounded-xl p-6 bg-gradient-to-br from-blue-200 via-blue-400 to-blue-600 text-white shadow-lg text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-blue-300 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95" data-template="14" role="listitem button" tabindex="0">
+  <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+    "हर सुबह एक नई शुरुआत होती है,<br>हर रात कुछ सीख पीछे छोड़ जाती है"
+  </p>
+</div>
+
+<!-- NEW TEMPLATE 15: Classic Urdu Aesthetic -->
+<div aria-label="Select template 15" class="cursor-pointer rounded-2xl p-6 bg-gradient-to-br from-purple-200 via-pink-200 to-yellow-100 text-gray-900 shadow-md text-center font-shayari text-lg sm:text-xl tracking-wide select-none hover:ring-4 hover:ring-purple-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95 border border-purple-400" data-template="15" role="listitem button" tabindex="0">
+  <p class="whitespace-pre-wrap leading-loose max-w-xs">
+    "लबों पे उसके कभी बददुआ नहीं होती,<br>बस एक माँ है जो कभी खफा नहीं होती"
+  </p>
+</div>
+ 
+<!-- Template 16 -->
+<div aria-label="Select template 16" class="cursor-pointer rounded-xl p-6 bg-yellow-700 text-white shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-yellow-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95 bg-[url('https://www.transparenttextures.com/patterns/asfalt-light.png')] bg-repeat" data-template="16" role="listitem button" tabindex="0">
+  <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+    "Rise your selfhood so high<br>That fate must ask your wish." <br>— Iqbal
+  </p>
+</div>
+
+<!-- Template 17 -->
+<div aria-label="Select template 17" class="cursor-pointer rounded-xl p-6 bg-green-900 text-white shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-green-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95 bg-[url('https://www.transparenttextures.com/patterns/linen.png')] bg-repeat" data-template="17" role="listitem button" tabindex="0">
+  <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+    "The pain within the heart<br> isn't it made of flesh and stone?" <br>— Ghalib
+  </p>
+</div>
+
+<!-- Template 18 -->
+<div aria-label="Select template 18" class="cursor-pointer rounded-xl p-6 bg-pink-700 text-white shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-pink-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95 bg-[url('https://www.transparenttextures.com/patterns/geometry2.png')] bg-repeat" data-template="18" role="listitem button" tabindex="0">
+  <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+    "Even in your absence<br>I breathe your silence, not the air." <br>— Ghalib
+  </p>
+</div>
+
+<!-- Template 19 -->
+<div aria-label="Select template 19" class="cursor-pointer rounded-xl p-6 bg-gray-800 text-white shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-gray-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95 bg-[url('https://www.transparenttextures.com/patterns/skelatal-weave.png')] bg-repeat" data-template="19" role="listitem button" tabindex="0">
+  <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+    "Stars lie beyond stars<br> There are still more skies to fly." <br>— Iqbal
+  </p>
+</div>
+
+  <!-- --- NEW TEMPLATES ADD HERE --- -->
+                <!-- Template 20-->
+                <div aria-label="Select template 22" class="cursor-pointer rounded-xl p-6 bg-gradient-to-br from-red-400 via-yellow-400 to-green-400 dark:from-red-700 dark:via-yellow-700 dark:to-green-700 text-white shadow-md text-center font-shayari text-lg sm:text-xl select-none hover:ring-4 hover:ring-green-400 transition flex flex-col justify-center items-center aspect-square transform hover:scale-105 active:scale-95" data-template="13" role="listitem button" tabindex="0">
+                    <p class="whitespace-pre-wrap leading-relaxed max-w-xs">
+                        "The heart is not stone or brick, why shouldn't it fill with pain? I too will cry if tears come to your eyes."
+                    </p>
+                </div>
+    
+                
+    
+
             </div>
         </section>
 
         <!-- How to Use Section -->
         <section class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 sm:p-10 mb-10">
             <h2 class="text-3xl font-semibold mb-6 text-center font-['Roboto_Slab']">
-                How to Use ShayariVerse
+                How to Use ShayariGenerator
             </h2>
             <div class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
                 <!-- Step 1 Card -->
@@ -256,7 +353,7 @@
     <footer class="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-6 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm sm:text-base">
             © 2025 ShayariGenerator. All rights reserved. | 
-            <a href="/public/privacy-policy.html" class="text-indigo-600 hover:underline dark:text-indigo-400">Privacy Policy</a>
+            <a href="/privacy-policy.html" class="text-indigo-600 hover:underline dark:text-indigo-400">Privacy Policy</a>
         </div>
     </footer>
 

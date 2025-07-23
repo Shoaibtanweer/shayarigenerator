@@ -1,13 +1,13 @@
 /**
  * @file main.js
- * @description This file contains the main logic for the ShayariVerse website,
+ * @description This file contains the main logic for the ShayariGenerator website,
  * including Shayari generation, copy, share, download functionalities,
  * template application, and dark mode toggle.
  */
 
 // Import shayariData and templates from their respective modules
 // IMPORTANT: These paths are relative to main.js.
-// If main.js is in /js/, then poetdata.js and templates.js are in the same folder.
+// If main.js in js/ folder, then poetdata.js and templates.js are in the same folder.
 import { shayariData } from './poetdata.js';
 import { templates } from './templates.js';
 
@@ -35,12 +35,11 @@ const templateSelector = document.getElementById("templateSelector");
 const darkModeToggle = document.getElementById("darkModeToggle");
 const htmlElement = document.documentElement; // Represents the <html> tag
 
-// Mobile menu elements (NEWLY ADDED/CORRECTED REFERENCES)
+// Mobile menu elements
 const mobileMenuToggle = document.getElementById("mobileMenuToggle");
 const mobileMenuClose = document.getElementById("mobileMenuClose");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileTemplatesLink = document.getElementById("mobileTemplatesLink");
-const mobileShayariLink = mobileMenu.querySelector('a[href="https://shayarihotoaisi.com/shayari/"]'); // New reference for Shayari link
 const mobileDarkModeToggle = document.getElementById("mobileDarkModeToggle");
 
 
@@ -231,7 +230,12 @@ async function downloadShayari() {
     fontSize: output.style.fontSize, // Capture font size of the output element
     lineHeight: output.style.lineHeight,
     letterSpacing: output.style.letterSpacing,
-    wordSpacing: output.style.wordSpacing
+    wordSpacing: output.style.wordSpacing,
+    textAlign: output.style.textAlign, // Store original text-align
+    direction: output.style.direction, // Store original direction
+    unicodeBidi: output.style.unicodeBidi, // Store original unicode-bidi
+    boxShadow: shayariCard.style.boxShadow, // Store original box-shadow
+    fontFamily: output.style.fontFamily // Store original font-family
   };
 
   // Apply temporary styles for 1080x1080 capture
@@ -241,10 +245,19 @@ async function downloadShayari() {
   shayariCard.style.maxWidth = '1080px';
   shayariCard.style.aspectRatio = '1 / 1';
   shayariCard.style.padding = '48px'; // Corresponds to p-12 (12 * 4 = 48px)
+  shayariCard.style.boxShadow = 'none'; // Remove shadow for download
+
+  // Apply text formatting for better readability in Urdu/Arabic for download
   output.style.fontSize = '2.2rem'; // Adjusted for better fit in 1080x1080
   output.style.lineHeight = '1.4';
-  output.style.letterSpacing = '0.5px';
+  // output.style.letterSpacing = '0.5px'; // letter spacing between letter
   output.style.wordSpacing = '2px';
+  output.style.textAlign = 'center'; // Center align text
+  // output.style.direction = 'rtl'; // Right-to-left for Urdu/Arabic
+  output.style.unicodeBidi = 'embed'; // Ensure proper bidirectional text handling
+  // NEW: Use a font stack known for better Arabic/Urdu rendering in html2canvas
+  output.style.fontFamily = "'Scheherazade New', 'Noto Naskh Arabic', 'Lateef', 'Amiri', serif";
+  output.style.textRendering = 'optimizeLegibility'; // Improve text rendering
 
 
   // Add a temporary class to ensure text scales appropriately for download
@@ -277,10 +290,18 @@ async function downloadShayari() {
     shayariCard.style.maxWidth = originalStyles.maxWidth;
     shayariCard.style.aspectRatio = originalStyles.aspectRatio;
     shayariCard.style.padding = originalStyles.padding;
+    shayariCard.style.boxShadow = originalStyles.boxShadow; // Restore original box-shadow
+
     output.style.fontSize = originalStyles.fontSize;
     output.style.lineHeight = originalStyles.lineHeight;
     output.style.letterSpacing = originalStyles.letterSpacing;
     output.style.wordSpacing = originalStyles.wordSpacing;
+    output.style.textAlign = originalStyles.textAlign; // Restore original text-align
+    output.style.direction = originalStyles.direction; // Restore original direction
+    output.style.unicodeBidi = originalStyles.unicodeBidi; // Restore original unicode-bidi
+    output.style.fontFamily = originalStyles.fontFamily; // Restore original font-family
+    output.style.textRendering = ''; // Restore original text-rendering
+
     shayariCard.classList.remove('scaled-for-download');
   }
 }
@@ -311,8 +332,10 @@ function setDarkMode(enabled) {
   if (enabled) {
     htmlElement.classList.add("dark"); // Add 'dark' class to <html>
     localStorage.setItem("shayari-dark-mode", "true"); // Save preference
-    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Change icon to sun (desktop)
-    darkModeToggle.setAttribute("title", "Switch to Light Mode"); // Update title (desktop)
+    if (darkModeToggle) { // Check if desktop toggle exists
+      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; // Change icon to sun (desktop)
+      darkModeToggle.setAttribute("title", "Switch to Light Mode"); // Update title (desktop)
+    }
     if (mobileDarkModeToggle) { // Check if mobile toggle exists before updating
         mobileDarkModeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode'; // Update mobile toggle text
         mobileDarkModeToggle.setAttribute("title", "Switch to Light Mode"); // Update title (mobile)
@@ -320,8 +343,10 @@ function setDarkMode(enabled) {
   } else {
     htmlElement.classList.remove("dark"); // Remove 'dark' class from <html>
     localStorage.setItem("shayari-dark-mode", "false"); // Save preference
-    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Change icon to moon (desktop)
-    darkModeToggle.setAttribute("title", "Switch to Dark Mode"); // Update title (desktop)
+    if (darkModeToggle) { // Check if desktop toggle exists
+      darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'; // Change icon to moon (desktop)
+      darkModeToggle.setAttribute("title", "Switch to Dark Mode"); // Update title (desktop)
+    }
     if (mobileDarkModeToggle) { // Check if mobile toggle exists before updating
         mobileDarkModeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark Mode'; // Update mobile toggle text
         mobileDarkModeToggle.setAttribute("title", "Switch to Dark Mode"); // Update title (mobile)
@@ -363,13 +388,17 @@ templateSelector.querySelectorAll("div[data-template]").forEach((el) => {
 });
 
 // Dark mode toggle button click event (Desktop)
-darkModeToggle.addEventListener("click", () => {
-  const isDark = htmlElement.classList.contains("dark"); // Check current mode
-  setDarkMode(!isDark); // Toggle dark mode
-});
+// Only add listener if element exists
+if (darkModeToggle) {
+  darkModeToggle.addEventListener("click", () => {
+    const isDark = htmlElement.classList.contains("dark"); // Check current mode
+    setDarkMode(!isDark); // Toggle dark mode
+  });
+}
+
 
 // Mobile menu toggle events
-if (mobileMenuToggle && mobileMenu && mobileMenuClose) { // Ensure elements exist
+if (mobileMenuToggle && mobileMenu && mobileMenuClose) { // Ensure all core mobile menu elements exist
     mobileMenuToggle.addEventListener("click", () => {
         mobileMenu.classList.add("open");
     });
@@ -378,8 +407,7 @@ if (mobileMenuToggle && mobileMenu && mobileMenuClose) { // Ensure elements exis
         mobileMenu.classList.remove("open");
     });
 
-    // Close mobile menu when a link is clicked
-    // Added event listener for all links in mobile menu
+    // Close mobile menu when any link is clicked inside it
     mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.remove('open');
@@ -413,5 +441,5 @@ if (mobileMenuToggle && mobileMenu && mobileMenuClose) { // Ensure elements exis
   // Apply the default or previously selected template on load
   applyTemplate(currentTemplate);
   // Optional: Initial shayari generation on page load
-  // generateShayari(); // Uncomment this line if you want a shayari to be generated automatically on page load
+  // generateShayari(); // Uncomment this line if I want a shayari to be generated automatically on page load
 })();

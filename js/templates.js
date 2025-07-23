@@ -45,6 +45,48 @@ export const templates = {
   // NEW TEMPLATE 10: Modern Minimalist with Shadow
   10: {
     classes: "bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 text-center font-shayari text-xl sm:text-3xl leading-relaxed flex flex-col justify-center select-text rounded-xl shadow-lg aspect-square hover:shadow-2xl transition-shadow duration-300",
-  }
+  },
+
+  // NEW TEMPLATE 11: Romantic Heart Style
+11: {
+  classes: "bg-pink-100 dark:bg-pink-900 text-red-700 dark:text-red-100 text-center font-shayari text-xl sm:text-3xl leading-relaxed flex flex-col justify-center select-text rounded-[40px] border-4 border-red-400 shadow-xl aspect-square hover:shadow-2xl transition-shadow duration-300",
+},
+
+// NEW TEMPLATE 12: Sad & Moody Vibe
+12: {
+  classes: "bg-gradient-to-br from-gray-700 via-gray-900 to-black text-white text-center font-shayari text-xl sm:text-3xl italic leading-relaxed flex flex-col justify-center select-text rounded-lg border border-gray-600 shadow-inner aspect-square hover:shadow-lg transition duration-300",
+},
+
+// NEW TEMPLATE 13: Motivational Fire Theme
+13: {
+  classes: "bg-gradient-to-br from-yellow-400 via-orange-500 to-red-600 text-white text-center font-shayari font-bold text-xl sm:text-3xl leading-relaxed flex flex-col justify-center select-text rounded-xl shadow-2xl aspect-square hover:scale-105 transition-transform duration-300",
+},
+
+// NEW TEMPLATE 14: Cool Blue Inspiration
+14: {
+  classes: "bg-gradient-to-br from-blue-200 via-blue-400 to-blue-600 text-white text-center font-shayari text-xl sm:text-3xl leading-relaxed flex flex-col justify-center select-text rounded-xl shadow-lg aspect-square hover:shadow-xl transition duration-300",
+},
+
+// NEW TEMPLATE 15: Classic Urdu Aesthetic
+15: {
+  classes: "bg-gradient-to-br from-purple-200 via-pink-200 to-yellow-100 text-gray-900 text-center font-shayari text-xl sm:text-3xl leading-loose tracking-wide flex flex-col justify-center select-text rounded-2xl shadow-md aspect-square border border-purple-400 hover:shadow-xl transition duration-300",
+},
+
+16: {
+  classes: "bg-yellow-700 text-white text-center font-shayari text-xl sm:text-3xl leading-relaxed flex flex-col justify-center select-text rounded-xl shadow-lg aspect-square bg-[url('https://www.transparenttextures.com/patterns/asfalt-light.png')] bg-repeat",
+},
+17: {
+  classes: "bg-green-900 text-white text-center font-shayari text-xl sm:text-3xl leading-relaxed flex flex-col justify-center select-text rounded-xl shadow-lg aspect-square bg-[url('https://www.transparenttextures.com/patterns/linen.png')] bg-repeat",
+},
+18: {
+  classes: "bg-pink-700 text-white text-center font-shayari text-xl sm:text-3xl leading-relaxed flex flex-col justify-center select-text rounded-xl shadow-lg aspect-square bg-[url('https://www.transparenttextures.com/patterns/geometry2.png')] bg-repeat",
+},
+19: {
+  classes: "bg-gray-800 text-white text-center font-shayari text-xl sm:text-3xl leading-relaxed flex flex-col justify-center select-text rounded-xl shadow-lg aspect-square bg-[url('https://www.transparenttextures.com/patterns/skelatal-weave.png')] bg-repeat",
+},
+  20: {
+    classes: "bg-gradient-to-br from-red-400 via-yellow-400 to-green-400 dark:from-red-700 dark:via-yellow-700 dark:to-green-700 text-white text-center font-shayari text-xl sm:text-3xl leading-relaxed flex flex-col justify-center select-text rounded-xl shadow-lg aspect-square",
+  },
+  
   
 };
